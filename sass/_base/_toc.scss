@@ -1,0 +1,131 @@
+/*!------------------------------------------------------------------
+[MAIN STYLESHEET]
+
+PROJECT :	FLATRICA | MATERIAL CV
+VERSION :	2.0
+-------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------
+[TABLE OF CONTENTS]
+
+1. BODY
+
+    2.PRE-LOADER / #loading
+         2.1 NAME & STATUS / .text-holder
+          2.1.1 NAME / h2
+          2.1.2 STATUS / h6
+
+ 	3. HEADER / #home
+	     3.1 NAVIGATION / #themenu
+		    3.1.1 MENU / #menu-options
+		      3.1.1.1 PERSONAL LOGO / .logo-flat
+		      3.1.1.2 OPTIONS / a
+		    3.1.2 MENU BUTTON / #menuToggle
+
+    4. V-CARD / #v-card-holder #v-card
+       4.1 PROFILE PICTURE / #profile
+       4.2 PROFILE DETAILS / .card-content
+         4.2.1 NAME & STATUS / .info-headings
+         4.2.2 CONTACT INFO / .infos
+         4.2.3 LINKS / .links
+
+	5. ABOUT / #about
+	     5.1 DETAILS/ #about-card
+		   5.1.1 ABOUT PARAGRAPH / .card-content p
+		   5.1.1 BUTTONS / #about-btn
+
+    6. EDUCATION / #education
+         6.1 SECTION TITLE/ .section-title
+	     6.2 TIMELINE/ #timeline-education
+		   6.2.1 TIMELINE BLOCK / .timeline-block
+		     6.2.1 TIMELINE DOT / .timeline-dot
+		     6.2.2 TIMELINE CONTENT / .timeline-content
+		       6.2.2.1 TIMELINE TITLE / .timeline-title
+		       6.2.2.2 TIMELINE TITLE INFO / .timeline-info
+		       6.2.2.3 TIMELINE PARAGRAPH / p
+
+    7. SKILLS / #skills
+         7.1 SECTION TITLE/ .section-title
+		 7.2 SKILL SECTION TITLE/ .skills-title
+		 7.3.1 SKILL BAR / .skillbar
+		   7.3.1 BAR TITLE / .skillbar-title
+		   7.3.1 BAR / .skillbar-title
+		   7.3.1 PARENTAGE / .skill-bar-percent
+
+    8. EXPERIENCE / #experience
+         8.1 SECTION TITLE/ .section-title
+		 8.2 TIMELINE / #timeline-experience
+		   8.2.1 TIMELINE BLOCK / .timeline-block
+		     8.2.1 TIMELINE DOT / .timeline-dot
+		     8.2.2 TIMELINE CONTENT / .timeline-content
+		       8.2.2.1 TIMELINE TITLE / .timeline-title
+		       8.2.2.2 TIMELINE TITLE INFO / .timeline-info
+		       8.2.2.3 TIMELINE PARAGRAPH / p
+
+    9. MODALS /
+	     9.1 MODAL HEADER/ .modal-header
+		 9.2 MODAL BODY / .modal-body
+		 9.3 MODAL FOOTER / .modal-footer
+
+
+	10. PORTFOLIOS / #portfolios
+	     10.1 SECTION TITLE/ .section-title
+		 10.2 OPTIONS / .nav .nav-tabs
+		 10.3 CATEGORIES CONTENT / .tab-content
+		   10.3.1 All CATEGORIES / #all
+		   10.3.2 CATEGORY 1 / #a
+		     10.3.2.1 FIGURE / figure .port-effect
+		       10.3.2.1.1 IMAGE / img
+		       10.3.2.1.2 CAPTION / figcaption
+		         10.3.2.1.2.1 HEADER / h2 span
+		         10.3.2.1.2.1 DETAIL / p
+		         10.3.2.1.2.1 LINK / a
+
+    11. INTEREST / #interest
+		 11.1 SECTION TITLE/ .section-title
+		 11.2 INTEREST / #interest-card
+		   11.2.1 INTEREST TEXT / .card-content p
+		   11.2.2 INTEREST ICONS / #interest-icon
+		     11.2.2.1 ICONS / .interest-icon i
+		     11.2.2.2 TITLE / .interest-icon span
+
+    12. TESTIMONIALS AND CLIENTS / #testimonials
+         12.1 SECTION TITLE/ .section-title
+         12.2 TESTIMONIALS / #testimonials-card
+           12.2.1 CLIENT IMAGE / .client-img img
+           12.2.2 CLIENT QUOTE / .card blockquote
+         12.3 CLIENT LOGOS / #clients
+           12.3.1 LOGOS/ #clients-list img
+
+     13. PRICING TABLE / #pricing-table
+         13.1 SECTION TITLE/ .section-title
+         13.2 PRICING TABLES / #pricing-card
+           13.2.1 TOP / .pricing-top
+           13.2.2 DETAILS / .pricing-bottom
+           13.2.3 BUTTON / a
+
+     14. BLOG / #blog
+         14.1 SECTION TITLE/ .section-title
+         14.2 BLOG'S / #blog-card
+           14.2.1 BLOG ODD/ .blog .odd
+             14.2.1.1 IMAGE/ .image img
+             14.2.1.2 DETAILS .content
+           14.2.2 BLOG EVEN / .blog .odd
+             14.2.2.1 IMAGE/ .image img
+             14.2.2.2 DETAILS .content
+
+    15. CONTACT / #contact
+         15.1 SECTION TITLE/ .section-title
+         15.2 CONTACT FORM / #contact-form
+         15.2. MAP / #myMap
+
+    16. SCROLL TO TOP / #scroll-top
+         16.1 BUTTON / #scrollup
+
+    17. FOOTER / footer
+         17.1 DETAILS / p
+         17.2 LINK / a
+
+    18. SINGLE PAGE / .single-page
+
+-------------------------------------------------------------------*/

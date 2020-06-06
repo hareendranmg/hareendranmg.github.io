@@ -1,0 +1,151 @@
+@import "../_abstracts/_variables";
+@import "../_mixins/_mediamixins";
+
+/*-------------------------------------------------------------------------------
+#VIDEO PLAY PROPERTIES
+-------------------------------------------------------------------------------*/
+body.scale-effect {
+  /*ripple effect*/
+  opacity: 1;
+  transform: none;
+  -webkit-transform: none;
+  pointer-events: all;
+  .icon-close {
+    /*visible close icon on ripple*/
+    opacity: 1;
+    transform: none;
+    -webkit-transform: none;
+    pointer-events: all;
+  }
+  .btn-holder {
+    #icon-play {
+      opacity: 0;
+    }
+    .btn-play {
+      /*scale effect for button*/
+      transform: scale(28);
+      -webkit-transform: scale(28);
+    }
+  }
+}
+
+.btn-holder {
+  /*play button holder*/
+  position: absolute;
+  top: 75px;
+  right: 346px;
+  cursor: pointer;
+  z-index: 3;
+  transition: all .5s;
+}
+
+.btn-holder .icon-close {
+  /*close icon transition*/
+  transition: 0.2s ease-in-out;
+}
+
+.btn-holder:hover .btn-play {
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+}
+
+.btn-play {
+  /*play button properties*/
+  box-sizing: border-box;
+  transform-origin: 50%;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  transition: all 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+  background-color: $accent-color;
+  overflow: hidden;
+  &:hover {
+    /*hover effect*/
+    background-color: $accent-color;
+  }
+  i {
+    /*icon*/
+    font-size: 35px;
+    color: $white;
+  }
+}
+
+.icon-close {
+  /*close button icon*/
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  color: $white;
+  opacity: 0;
+  -webkit-transform: translate(10px, 0) rotate(90deg);
+  transform: translate(10px, 0) rotate(90deg);
+  transition: all 0.3s ease-in-out;
+  z-index: 5;
+  background: rgba(41, 40, 40, 0.36) !important
+}
+
+.height-change {
+  /*adds v-card height*/
+  height: 548px !important;
+  margin: -76px 3px 0 0px !important;
+}
+
+.middle {
+  /*takes play button to middle*/
+  top: 170px !important;
+  right: 430px !important;
+}
+
+.video {
+  /*centres the video*/
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 2;
+  width: 100%;
+  height: auto;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+@include screen_767 {
+  .btn-holder {
+    /*play button holder*/
+    top: 102px;
+    right: 0;
+    .btn-large {
+      width: 36.5px;
+      height: 36.5px;
+      i {
+        line-height: 1 !important;
+        font-size: 26px !important;
+      }
+    }
+  }
+  .middle {
+    /*takes play button to middle*/
+    top: 250px !important;
+    right: 50px !important;
+  }
+}
+
+@media screen and (max-width: 660px) {
+  .height-change {
+    /*adds v-card height*/
+    height: 440px !important;
+    margin: -76px 3px 0 0px !important;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .height-change {
+    /*adds v-card height*/
+    height: 300px !important;
+    margin: -21px 3px 0 0px !important
+  }
+}
+
+@media screen and (min-width: 769px) and (max-width: 991px) {
+  .middle {
+    /*takes play button to middle*/
+    top: 170px !important;
+    right: 340px !important;
+  }
+}

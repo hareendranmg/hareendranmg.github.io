@@ -1,0 +1,724 @@
+//===========================================================================//
+// PORTFOLIO SECTION
+//===========================================================================//
+@import "../_abstracts/_variables";
+@import "../_mixins/_mediamixins";
+/*portfolios section*/
+#portfolios {
+  #portfolios-card {
+    /*portfolio card*/
+    overflow: hidden;
+    .nav-tabs {
+      /*portfolios tabs*/
+      border-bottom: 0;
+      text-align: center;
+      margin-bottom: 10px;
+      li {
+        /*option list*/
+        float: none;
+        margin: 0;
+
+        position: relative;
+        display: inline-block;
+        a {
+          /*links for options*/
+          margin-right: 0;
+          border: 0;
+          color: #555555;;
+          &:hover {
+          }
+        }
+      }
+    }
+
+    .nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus {
+      /*tabs style bootstrap*/
+      border: 0;
+      border-bottom: 5px solid $accent-color;
+      background-color: transparent;
+      /* outline: 0;*/
+    }
+
+    .tab-content {
+      /*portfolios content*/
+      margin: 0 10px;
+
+      %extend_1 {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+      }
+
+      %extend_2 {
+        opacity: 1;
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+      }
+      @media screen and (max-width: 747px) {
+        .big {
+          /*big tile width*/
+          // width: 66.55%;
+        }
+      }
+      @media (min-width: 992px) {
+        .big {
+          width: 66.6%;
+        }
+      }
+      .grid {
+        /*image girds*/
+        position: relative;
+        margin: 0 auto;
+        padding: 5px 7px 7px 5px;
+        list-style: none;
+        text-align: center;
+        figure {
+          /*portfolio overlay*/
+          position: relative;
+          float: left;
+          margin: 0;
+          width: 100%;
+          background: transparent;
+          text-align: center;
+          cursor: pointer;
+          box-shadow: $box-shadow;
+          overflow: hidden !important;
+          padding: 2px !important;
+          img {
+            /*portfolio image*/
+            position: relative;
+            display: block;
+            width: 100%;
+            opacity: 0.8;
+          }
+          figcaption {
+            /*image caption*/
+            padding: 2em;
+            color: $white;
+            text-transform: uppercase;
+            font-size: 1.25em;
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+            @extend %extend_1;
+            > a {
+              @extend %extend_1;
+              z-index: 1000;
+              text-indent: 200%;
+              white-space: nowrap;
+              font-size: 0;
+              opacity: 0;
+            }
+          }
+          figcaption::before {
+            pointer-events: none;
+          }
+          figcaption::after {
+            pointer-events: none;
+          }
+          h2 {
+            /*portfolio caption header*/
+            word-spacing: -0.15em;
+            font-weight: 300;
+            font-size: 18px;
+            margin: 0;
+            span {
+              /*span tag inside  h2*/
+              font-weight: 800;
+            }
+            i {
+              display: block;
+              padding: 9px;
+              margin-top: 24px;
+              font-size: 48px;
+            }
+          }
+          p {
+            /*portfolio paragraph small description*/
+            margin: 0;
+            letter-spacing: 1px;
+            font-size: 56.5%;
+          }
+        }
+      }
+      @include screen_540-766 {
+        .grid {
+          /*max grid size in screen range*/
+          max-width: 50%;
+        }
+      }
+      figure.port-effect-up {
+        /*portfolio effect up*/
+        figcaption::before {
+          /*caption before*/
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background: $port_overlay;
+          content: '';
+          opacity: 0;
+          -webkit-transform: translate3d(0, 50%, 0);
+          transform: translate3d(0, 50%, 0);
+          -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+          transition: opacity 0.35s, transform 0.35s;
+        }
+        h2 {
+          /*portfolio caption header*/
+          position: absolute;
+          top: 55%;
+          left: 0;
+          width: 100%;
+          color: $port_h2;
+          -webkit-transition: -webkit-transform 0.35s, color 0.35s;
+          transition: transform 0.35s, color 0.35s;
+          -webkit-transform: translate3d(0, -50%, 0);
+          transform: translate3d(0, -50%, 0);
+        }
+        p {
+          /*portfolio paragraph small description*/
+          -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+          transition: opacity 0.35s, transform 0.35s;
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          padding: 2em;
+          width: 100%;
+          opacity: 0;
+          -webkit-transform: translate3d(0, 10px, 0);
+          transform: translate3d(0, 10px, 0);
+          color: $port-p;
+        }
+        &:hover {
+          /*hover effect*/
+          h2 {
+            /*hover effect for portfolio header*/
+            color: $accent-color;
+            -webkit-transform: translate3d(0, -50%, 0) translate3d(0, -40px, 0);
+            transform: translate3d(0, -50%, 0) translate3d(0, -40px, 0);
+          }
+          figcaption::before {
+            @extend %extend_2;
+          }
+          p {
+            @extend %extend_2;
+          }
+        }
+      }
+
+      figure.port-effect-scale {
+        /*portfolio effect scale*/
+        img {
+          -webkit-transition: opacity 0.60s, -webkit-transform 0.60s;
+          transition: opacity 0.60s, transform 0.60s;
+        }
+        figcaption {
+          /*caption*/
+          -webkit-transition: background-color 0.60s;
+          transition: background-color 0.60s;
+          &::before {
+            /*caption before*/
+            background: $port_overlay;
+            position: absolute;
+            top: -1px;
+            right: -1px;
+            background: rgba(0, 0, 0, 0.7);
+            bottom: -1px;
+            left: -1px;
+            content: '';
+            opacity: 0;
+            -webkit-transition: opacity 0.60s, -webkit-transform 0.60s;
+            transition: opacity 0.60s, transform 0.60s;
+          }
+        }
+        h2 {
+          /*portfolio caption header*/
+          position: absolute;
+          top: 55%;
+          left: 0;
+          width: 100%;
+          color: $port_h2;
+          -webkit-transition: -webkit-transform 0.35s, color 0.35s;
+          transition: transform 0.35s, color 0.35s;
+          -webkit-transform: translate3d(0, -50%, 0);
+          transform: translate3d(0, -50%, 0);
+        }
+        p {
+          /*caption paragraph*/
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          padding: 2em;
+          width: 100%;
+          opacity: 0;
+          color: $port-p;
+          -webkit-transition: opacity 0.60s, -webkit-transform 0.60s;
+          transition: opacity 0.60s, transform 0.60s;
+          -webkit-transform: scale(0);
+          transform: scale(0);
+        }
+        &:hover {
+          /*hover effect*/
+          h2 {
+            color: $accent-color;
+            -webkit-transform: translate3d(0, -50%, 0) translate3d(0, -40px, 0);
+            transform: translate3d(0, -50%, 0) translate3d(0, -40px, 0);
+            opacity: 1;
+          }
+          figcaption::before {
+            opacity: 1;
+            background: $port_overlay;
+          }
+          p {
+            opacity: 1;
+            -webkit-transform: scale(1);
+            transform: scale(1);
+          }
+          img {
+            -webkit-transform: scale(1.2);
+            transform: scale(1.2);
+          }
+        }
+      }
+    }
+  }
+  .btn-large {
+    color: $accent-color !important;
+    background: $body-color !important;
+    margin-bottom: 10px !important;
+  }
+  @keyframes InLeft {
+    /*keyframe for slide in left*/
+    from {
+      -webkit-transform: translate3d(-100%, 0, 0);
+      transform: translate3d(-100%, 0, 0);
+      visibility: visible;
+    }
+
+    to {
+      -webkit-transform: translate3d(0, 0, 0);
+      transform: translate3d(0, 0, 0);
+    }
+  }
+  @-webkit-keyframes InLeft {
+    /*keyframe for slide in left*/
+    from {
+      -webkit-transform: translate3d(-100%, 0, 0);
+      transform: translate3d(-100%, 0, 0);
+      visibility: visible;
+    }
+
+    to {
+      -webkit-transform: translate3d(0, 0, 0);
+      transform: translate3d(0, 0, 0);
+    }
+  }
+
+  .InLeft {
+    /*animation slide in left*/
+    -webkit-animation-name: InLeft;
+    animation-name: InLeft;
+    -webkit-animation-duration: .8s;
+    animation-duration: .8s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+  }
+
+  @-webkit-keyframes InRight {
+    /*keyframe for slide in right*/
+    from {
+      -webkit-transform: translate3d(100%, 0, 0);
+      transform: translate3d(100%, 0, 0);
+      visibility: visible;
+    }
+
+    to {
+      -webkit-transform: translate3d(0, 0, 0);
+      transform: translate3d(0, 0, 0);
+    }
+  }
+
+  @keyframes InRight {
+    /*keyframe for slide in left*/
+    from {
+      -webkit-transform: translate3d(100%, 0, 0);
+      transform: translate3d(100%, 0, 0);
+      visibility: visible;
+    }
+
+    to {
+      -webkit-transform: translate3d(0, 0, 0);
+      transform: translate3d(0, 0, 0);
+    }
+  }
+
+  .InRight {
+    /*animation slide in right*/
+    -webkit-animation-name: InRight;
+    animation-name: InRight;
+    -webkit-animation-duration: .8s;
+    animation-duration: .8s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+  }
+}
+
+/*
+-------------------------------------------------------------------------------
+POPUP ANIMATIONS
+-------------------------------------------------------------------------------
+*/
+/*====== Zoom effect ======*/
+.mfp-zoom-in {
+
+  /* start state */
+  .mfp-with-anim {
+    opacity: 0;
+    transition: all 0.2s ease-in-out;
+    transform: scale(0.8);
+  }
+
+  &.mfp-bg {
+    opacity: 0;
+    transition: all 0.3s ease-out;
+  }
+
+  /* animate in */
+  &.mfp-ready {
+    .mfp-with-anim {
+      opacity: 1;
+      transform: scale(1);
+    }
+    &.mfp-bg {
+      opacity: 0.8;
+    }
+  }
+
+  /* animate out */
+  &.mfp-removing {
+
+    .mfp-with-anim {
+      transform: scale(0.8);
+      opacity: 0;
+    }
+    &.mfp-bg {
+      opacity: 0;
+    }
+  }
+}
+
+/*====== Newspaper effect ======*/
+.mfp-newspaper {
+
+  /* start state */
+  .mfp-with-anim {
+    opacity: 0;
+    -webkit-transition: all 0.2s ease-in-out;
+    transition: all 0.5s;
+
+    transform: scale(0) rotate(500deg);
+  }
+
+  &.mfp-bg {
+    opacity: 0;
+    transition: all 0.5s;
+  }
+
+  /* animate in */
+  &.mfp-ready {
+    .mfp-with-anim {
+      opacity: 1;
+      transform: scale(1) rotate(0deg);
+    }
+    &.mfp-bg {
+      opacity: 0.8;
+    }
+  }
+
+  /* animate out */
+  &.mfp-removing {
+
+    .mfp-with-anim {
+      transform: scale(0) rotate(500deg);
+      opacity: 0;
+    }
+    &.mfp-bg {
+      opacity: 0;
+    }
+  }
+}
+
+/*====== Move-horizontal effect ======*/
+.mfp-move-horizontal {
+
+  /* start state */
+  .mfp-with-anim {
+    opacity: 0;
+    transition: all 0.3s;
+
+    transform: translateX(-50px);
+  }
+
+  &.mfp-bg {
+    opacity: 0;
+    transition: all 0.3s;
+  }
+
+  /* animate in */
+  &.mfp-ready {
+    .mfp-with-anim {
+      opacity: 1;
+      transform: translateX(0);
+    }
+    &.mfp-bg {
+      opacity: 0.8;
+    }
+  }
+
+  /* animate out */
+  &.mfp-removing {
+
+    .mfp-with-anim {
+      transform: translateX(50px);
+      opacity: 0;
+    }
+    &.mfp-bg {
+      opacity: 0;
+    }
+
+  }
+
+}
+
+/*====== Move-from-top effect ======*/
+.mfp-move-from-top {
+
+  .mfp-content {
+    vertical-align: top;
+  }
+
+  /* start state */
+  .mfp-with-anim {
+    opacity: 0;
+    transition: all 0.2s;
+
+    transform: translateY(-100px);
+  }
+
+  &.mfp-bg {
+    opacity: 0;
+    transition: all 0.2s;
+  }
+
+  /* animate in */
+  &.mfp-ready {
+    .mfp-with-anim {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    &.mfp-bg {
+      opacity: 0.8;
+    }
+  }
+
+  /* animate out */
+  &.mfp-removing {
+
+    .mfp-with-anim {
+      transform: translateY(-50px);
+      opacity: 0;
+    }
+    &.mfp-bg {
+      opacity: 0;
+    }
+
+  }
+
+}
+
+/*====== 3d unfold ======*/
+.mfp-3d-unfold {
+
+  .mfp-content {
+    perspective: 2000px;
+  }
+
+  /* start state */
+  .mfp-with-anim {
+    opacity: 0;
+    transition: all 0.3s ease-in-out;
+    transform-style: preserve-3d;
+    transform: rotateY(-60deg);
+  }
+
+  &.mfp-bg {
+    opacity: 0;
+    transition: all 0.5s;
+  }
+
+  /* animate in */
+  &.mfp-ready {
+    .mfp-with-anim {
+      opacity: 1;
+      transform: rotateY(0deg);
+    }
+    &.mfp-bg {
+      opacity: 0.8;
+    }
+  }
+
+  /* animate out */
+  &.mfp-removing {
+
+    .mfp-with-anim {
+      transform: rotateY(60deg);
+      opacity: 0;
+    }
+    &.mfp-bg {
+      opacity: 0;
+    }
+
+  }
+
+}
+
+/*====== Zoom-out effect ======*/
+.mfp-zoom-out {
+
+  /* start state */
+  .mfp-with-anim {
+    opacity: 0;
+    transition: all 0.3s ease-in-out;
+    transform: scale(1.3);
+  }
+
+  &.mfp-bg {
+    opacity: 0;
+    transition: all 0.3s ease-out;
+  }
+
+  /* animate in */
+  &.mfp-ready {
+    .mfp-with-anim {
+      opacity: 1;
+      transform: scale(1);
+    }
+    &.mfp-bg {
+      opacity: 0.8;
+    }
+  }
+
+  /* animate out */
+  &.mfp-removing {
+
+    .mfp-with-anim {
+      transform: scale(1.3);
+      opacity: 0;
+    }
+    &.mfp-bg {
+      opacity: 0;
+    }
+
+  }
+
+}
+
+/*====== "Hinge" close effect =====*/
+@keyframes hinge {
+  0% {
+    transform: rotate(0deg);
+    transform-origin: top left;
+    animation-timing-function: ease-in-out;
+  }
+  20%, 60% {
+    transform: rotate(80deg);
+    transform-origin: top left;
+    animation-timing-function: ease-in-out;
+  }
+  40% {
+    transform: rotate(60deg);
+    transform-origin: top left;
+    animation-timing-function: ease-in-out;
+  }
+  80% {
+    transform: rotate(60deg) translateY(0);
+    opacity: 1;
+    transform-origin: top left;
+    animation-timing-function: ease-in-out;
+  }
+  100% {
+    transform: translateY(700px);
+    opacity: 0;
+  }
+}
+
+.hinge {
+  animation-duration: 1s;
+  animation-name: hinge;
+}
+
+.mfp-with-fade {
+  // before-open state
+  .mfp-content,
+  &.mfp-bg {
+    opacity: 0;
+    transition: opacity .5s ease-out;
+  }
+  // open state
+  &.mfp-ready {
+    .mfp-content {
+      opacity: 1;
+    }
+    &.mfp-bg {
+      opacity: 0.8; // background opacity
+    }
+  }
+
+  // closed state
+  &.mfp-removing {
+    &.mfp-bg {
+      opacity: 0;
+    }
+  }
+}
+
+/* overlay at start */
+.mfp-fade.mfp-bg {
+  opacity: 0;
+
+  -webkit-transition: all 0.15s ease-out;
+  -moz-transition: all 0.15s ease-out;
+  transition: all 0.15s ease-out;
+}
+
+/* overlay animate in */
+.mfp-fade.mfp-bg.mfp-ready {
+  opacity: 0.8;
+}
+
+/* overlay animate out */
+.mfp-fade.mfp-bg.mfp-removing {
+  opacity: 0;
+}
+
+/* content at start */
+.mfp-fade.mfp-wrap .mfp-content {
+  opacity: 0;
+
+  -webkit-transition: all 0.15s ease-out;
+  -moz-transition: all 0.15s ease-out;
+  transition: all 0.15s ease-out;
+}
+
+/* content animate it */
+.mfp-fade.mfp-wrap.mfp-ready .mfp-content {
+  opacity: 1;
+}
+
+/* content animate out */
+.mfp-fade.mfp-wrap.mfp-removing .mfp-content {
+  opacity: 0;
+}
+

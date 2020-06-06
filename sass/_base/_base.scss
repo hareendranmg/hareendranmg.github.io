@@ -1,0 +1,81 @@
+@import "../_abstracts/_variables";
+@import "../_mixins/_mediamixins";
+
+/*-------------------------------------------------------------------------------
+#BODY & HTML
+-------------------------------------------------------------------------------*/
+html, body {
+  margin: 0;
+  padding: 0;
+  outline: 0;
+  display: block;
+  font-family: 'Roboto', sans-serif;
+  font-size: 15px;
+  background-color: $body-color;
+  color: $font-color-dark;
+  -webkit-font-smoothing: subpixel-antialiased;
+  -webkit-text-stroke: 1px transparent;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -webkit-overflow-scrolling: touch;
+}
+
+/*-------------------------------------------------------------------------------
+#SECTION
+-------------------------------------------------------------------------------*/
+.section {
+  /*section properties*/
+  position: relative;
+  padding-top: 15px;
+  padding-bottom: 30px;
+  .section-title {
+    /*section title*/
+    margin-bottom: 18px;
+    .title-icon {
+      /*icon*/
+      margin-right: 20px;
+      color: $primary-color;
+    }
+    img {
+      width: 66px;
+      padding: 10px;
+      box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+      margin: -2px 12px 12px 12px;
+    }
+  }
+}
+
+/*-------------------------------------------------------------------------------
+#CONTAINER
+-------------------------------------------------------------------------------*/
+.container {
+  /*container properties*/
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+  -webkit-backface-visibility: hidden;
+}
+
+@media (min-width: 768px) {
+  .container {
+    /*container at min width 768px*/
+    width: 750px;
+  }
+}
+
+@media (min-width: 992px) {
+  .container {
+    /*container at min width 992px*/
+    width: 970px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    /*container at min width 1200px*/
+    width: 1000px;
+  }
+}
+
+

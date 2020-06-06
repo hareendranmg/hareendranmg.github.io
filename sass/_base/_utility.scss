@@ -1,0 +1,35 @@
+@import "../_abstracts/_variables";
+@import "../_mixins/_mediamixins";
+
+/*-------------------------------------------------------------------------------
+#UTILITY CLASSES
+-------------------------------------------------------------------------------*/
+.is-hidden {
+  visibility: hidden;
+}
+
+.btn {
+  padding-top: 8px;
+}
+
+.social {
+  z-index: 0 !important;
+}
+
+video {
+  border: 3px solid rgb(0, 0, 0);
+}
+
+.black {
+  /*bg color change to black*/
+  background-color: black !important;
+}
+
+.hide-overflow {
+  /*hides overflow*/
+  overflow: hidden !important;
+}
+
+.toast {
+  background-color: $accent-color;
+}

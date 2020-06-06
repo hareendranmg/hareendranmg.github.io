@@ -1,0 +1,25 @@
+@import "../_abstracts/_variables";
+@import "../_mixins/_mediamixins";
+/*-------------------------------------------------------------------------------
+#CARD
+-------------------------------------------------------------------------------*/
+.card {
+  /*card layout*/
+  position: relative;
+  background-color: $white;
+  transition: box-shadow .25s;
+  -webkit-transition: box-shadow .25s;
+  border-radius: 0 !important;
+  margin: 8px 0;
+  .card-content {
+    /*card content*/
+    padding: 40px;
+    border-radius: 0 0 2px 2px;
+    p {
+      /*paragraph style inside card content*/
+      margin: 0;
+      color: inherit;
+      text-align: center;
+    }
+  }
+}

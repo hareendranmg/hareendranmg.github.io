@@ -1,0 +1,55 @@
+@import "../_abstracts/_variables";
+@import "../_mixins/_mediamixins";
+
+/*-------------------------------------------------------------------------------
+ #FONT & TYPOGRAPHY
+-------------------------------------------------------------------------------*/
+h1, h2, h3, h4, h5, h6, span {
+  font-family: 'Raleway', sans-serif;
+}
+
+h4 {
+  font-size: 2.18rem;
+  line-height: 110%;
+  margin: 1.14rem 0 0.912rem 0;
+}
+
+p, a, li, label, input, blockquote, cite, div {
+  font-family: 'Muli', sans-serif;
+}
+
+p {
+  color: $p-color;
+}
+
+a {
+  color: $accent-color;
+  &:hover {
+    color: $accent-color-light;
+    text-decoration: none;
+  }
+  &:focus {
+    color: $accent-color-dark;
+    text-decoration: none;
+  }
+}
+
+h1 {
+  font-weight: $font-weight-bold;
+}
+
+h2, h3, h4 {
+  font-weight: $font-weight-semi-bold;
+}
+
+h5, h6 {
+  font-weight: $font-weight-medium;
+}
+
+p, a, li {
+  font-weight: $font-weight-normal;
+}
+
+h6 {
+  font-size: 1.4em;
+}

@@ -1,0 +1,46 @@
+@import "../_abstracts/_variables";
+@import "../_mixins/_mediamixins";
+/*-------------------------------------------------------------------------------
+#MODAL
+-------------------------------------------------------------------------------*/
+.modal {
+  padding-right: 0 !important;
+  padding-left: 0 !important;
+  .modal-content {
+    border-radius: 0 !important;
+    background-color: $white;
+    color: $font-color-dark;
+    .modal-body {
+      position: relative;
+      padding: 0 40px;
+      text-align: justify;
+      img{
+        padding-top: 10px;
+        padding-bottom: 10px;
+      }
+    }
+    .modal-header {
+      padding: 15px;
+      border-bottom: 0;
+      .close:focus, .close:hover {
+        color: $accent-color;
+        opacity: 1;
+      }
+    }
+    .modal-footer {
+      border: 0 !important;
+    }
+    .btn-default {
+      border-radius: 0;
+      background-color: $accent-color;
+      color: $white;
+      border-color: $accent-color;
+      &:hover, &:focus {
+        color: $white;
+        background-color: $accent-color;
+        border-color: $accent-color;
+        border-radius: 0;
+      }
+    }
+  }
+}

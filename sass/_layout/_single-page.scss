@@ -1,0 +1,230 @@
+//===========================================================================//
+// SINGLE BLOG AND PORTFOLIO
+//===========================================================================//
+@import "../_abstracts/_variables";
+@import "../_mixins/_mediamixins";
+
+/*back to home button*/
+.back-button {
+  height: 45px;
+  width: 45px;
+  cursor: pointer;
+  font-size: 28px;
+  background: $accent-color;
+  border: 1px solid $accent-color;
+  text-align: center;
+  position: fixed;
+  top: 21px;
+  left: 18px;
+  z-index: 8;
+  box-shadow: $box-shadow;
+  transition: .3s;
+  i {
+    color: $white;
+    padding-right: 3px;
+    padding-top: 8px;
+  }
+}
+
+.single-background {
+  /*single background*/
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 370px;
+  background: url(#{$rootPath}/images/backgrounds/background.jpg) no-repeat;
+  background-size: cover;
+  background-position: center center;
+  background-attachment: fixed;
+}
+
+/*single page content*/
+.single-page {
+  margin-top: -320px;
+
+  .section-title {
+    /*section title*/
+    position: relative;
+    color: $white;
+    i {
+      color: $primary-color;
+      padding: 12px;
+    }
+    img {
+      width: 66px;
+      padding: 10px;
+      box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+      margin: -2px 12px 12px 12px;
+    }
+  }
+  aside {
+    /*side widget*/
+    margin-top: -9px;
+  }
+
+  .post {
+    /*post*/
+    position: relative;
+    background: $white;
+    .post-image {
+      /*post image*/
+      height: auto;
+      img {
+        max-width: 100%;
+      }
+      .swiper-container {
+        background: black;
+        .swiper-pagination {
+          /*swiper pagination properties*/
+          .swiper-pagination-bullet {
+            width: 12px;
+            height: 12px;
+            border-radius: 0;
+            border: 2px solid $indicator-color;
+          }
+          .swiper-pagination-bullet-active {
+            background: $indicator-color;
+            opacity: 1;
+          }
+        }
+      }
+    }
+    header {
+      /*headings*/
+      padding: 20px;
+      background: $primary-color;
+      color: $white;
+      h3 {
+        margin: 0 0 15px;
+        padding: 0 0 15px;
+      }
+      time {
+        font-size: 14px;
+        float: right;
+        margin-top: 10px;
+      }
+      h1 {
+        margin: 0 0 15px;
+        font-size: 24px;
+      }
+      hr {
+        border-top: 3px solid $white;
+      }
+      .post-details {
+        /*post related details*/
+        font-size: 12px;
+        width: 90%;
+      }
+    }
+    .post-body {
+      /*post body*/
+      padding: 20px;
+      .client-info {
+        border-left: 4px solid $accent-color;
+        padding: 0 0 0 6px;
+        p {
+          margin: 0;
+        }
+      }
+    }
+  }
+
+  .disqus-comment {
+    /*disqus comment*/
+    padding: 20px;
+  }
+
+  .widget-holder {
+    /*side widget stuffs*/
+    h4 {
+      background: $primary-color;
+      color: $white;
+      font-size: 24px;
+      padding: 15px;
+    }
+    .widget {
+      padding: 20px;
+      .Media {
+        /*media object for recent post*/
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: start;
+        -webkit-align-items: flex-start;
+        -ms-flex-align: start;
+        align-items: flex-start;
+        margin-bottom: 1em;
+        padding: 5px;
+        transition: box-shadow .5s;
+        box-shadow: none;
+        cursor: pointer;
+        .Media-figure {
+          margin-right: 1em;
+          width: 75px;
+          border-radius: 50%;
+        }
+        .Media-body {
+          -webkit-box-flex: 1;
+          -webkit-flex: 1;
+          -ms-flex: 1;
+          flex: 1;
+          .Media-title {
+            margin: 0 0 .5em;
+            font-size: 18px;
+          }
+          &:last-child {
+            margin-bottom: 0;
+          }
+        }
+        &:hover {
+          box-shadow: inset -3px -3px 0px 1px $accent-color;
+        }
+      }
+      .categories li {
+        display: inline;
+      }
+      hr {
+        margin-top: 0;
+        margin-bottom: 18px;
+      }
+      .chip {
+        /*chip for tags*/
+        margin: 5px;
+        background-color: $accent-color;
+        color: $white;
+      }
+    }
+  }
+
+  .chip {
+    /*chip for tags*/
+    margin: 5px;
+    background-color: $overlay;
+    color: $white;
+  }
+
+  .chip:first-child {
+    margin-left: 0;
+  }
+
+  .project-detail {
+    p {
+      color: $white;
+      strong {
+        padding: 12px;
+      }
+    }
+  }
+  a {
+    color: $white;
+  }
+}
+
+hr {
+  border-top: 1px solid $white;
+}
+
+.single-footer {
+  margin: 0;
+}
