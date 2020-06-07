@@ -1,12 +1,12 @@
-(function($) {
+(function ($) {
     "use strict";
 
-    jQuery(document).on('ready', function() {
+    jQuery(document).on('ready', function () {
 
 
         function initNav() {
             /***MENU TOGGLE ANIMATION***/
-            $('div.toggle-normal').on('click', function() {
+            $('div.toggle-normal').on('click', function () {
                 $('i.top-bar').toggleClass('top-transform');
                 $('i.middle-bar').toggleClass('middle-transform');
                 $('i.bottom-bar').toggleClass('bottom-transform');
@@ -14,7 +14,7 @@
 
 
             /***MENU CLOSE***/
-            $('.section,div#menu-options a').on('click', function() {
+            $('.section,div#menu-options a').on('click', function () {
                 $('nav#theMenu').removeClass('menu-open');
                 $('i.top-bar').removeClass('top-transform');
                 $('i.middle-bar').removeClass('middle-transform');
@@ -22,7 +22,7 @@
             });
 
             /***MENU OPEN***/
-            $('div#menuToggle').on('click', function() {
+            $('div#menuToggle').on('click', function () {
                 $('div#menuToggle').toggleClass('active');
                 $('body').toggleClass('body-push-toright');
                 $('nav#theMenu').toggleClass('menu-open');
@@ -31,7 +31,7 @@
 
         function initSmoothScroll() {
             /***SMOOTH SCROLL***/
-            $('div#menu-options,div#about-btn').find('a[href*=#]:not([href=#])').on('click', function() {
+            $('div#menu-options,div#about-btn').find('a[href*=#]:not([href=#])').on('click', function () {
                 if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
                     var target = $(this.hash);
                     target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
@@ -48,7 +48,7 @@
 
         function initScrollToTop() {
             /***SCROLL TO TOP***/
-            $(window).on('scroll', function() {
+            $(window).on('scroll', function () {
                 if ($(this).scrollTop() >= 50) { // If page is scrolled more than 50px
                     $('div#scrollup').addClass('animated flipInY').fadeIn(200); // Fade in the arrow
                 } else {
@@ -56,7 +56,7 @@
                 }
             });
 
-            $('div#scrollup').on('click', function() {
+            $('div#scrollup').on('click', function () {
                 $("html,body").animate({
                     scrollTop: 0
                 }, 600);
@@ -78,19 +78,19 @@
             $(afterFirst).addClass('hide');
             $(addButton).addClass('x');
 
-            $(allOption).on('click', function() {
+            $(allOption).on('click', function () {
                 $(addButton).removeClass('hide').addClass('x');
                 $(all).removeClass('tab-pane');
                 $(afterFirst).addClass('hide');
                 $(addButtonIcon).addClass('fa-plus').removeClass('fa-arrow-up');
             });
-            $(otherOption).on('click', function() {
+            $(otherOption).on('click', function () {
                 $(addButton).addClass('hide x');
                 $(afterFirst).removeClass('hide');
                 $(all).addClass('tab-pane');
                 $(addButtonIcon).addClass('fa-plus').removeClass('fa-arrow-up');
             });
-            $(addButton).on('click', function() {
+            $(addButton).on('click', function () {
                 if ($(addButton).hasClass('x')) {
                     $(all).removeClass('tab-pane hide');
                     $(addButton).removeClass('x');
@@ -103,7 +103,7 @@
             });
 
             /***PORTFOLIO ANIMATION***/
-            $('li.list-shuffle,#add-more').on('click', function() {
+            $('li.list-shuffle,#add-more').on('click', function () {
                 $("div.inLeft")
                     .removeClass('InLeft')
                     .hide()
@@ -121,7 +121,7 @@
                 type: 'image',
                 removalDelay: 160, //delay removal by X to allow out-animation
                 callbacks: {
-                    beforeOpen: function() {
+                    beforeOpen: function () {
                         // just a hack that adds mfp-anim class to markup
                         this.st.image.markup = this.st.image.markup.replace('mfp-figure', 'mfp-figure mfp-with-anim');
                         this.st.mainClass = this.st.el.attr('data-effect');
@@ -143,7 +143,7 @@
 
         function initSkills() {
             /***SKILLS***/
-            $('div.skillbar').each(function() {
+            $('div.skillbar').each(function () {
                 $(this).find('div.skillbar-bar').css({
                     width: $(this).attr('data-percent')
                 });
@@ -163,11 +163,11 @@
             setInterval(rotateClients, clientspeed);
 
             $(document).on({
-                mouseenter: function() {
+                mouseenter: function () {
                     rotating = false;
                     // Turn off rotation when hovering
                 },
-                mouseleave: function() {
+                mouseleave: function () {
                     rotating = true;
                 }
             }, '#clients');
@@ -175,7 +175,7 @@
             function rotateClients() {
                 if (rotating !== false) {
                     var $first = $('ul#clients-list').find('li:first');
-                    $first.animate({ 'margin-left': '-140px' }, 2000, function() {
+                    $first.animate({ 'margin-left': '-140px' }, 2000, function () {
                         $first.remove().css({ 'margin-left': '0px' });
                         $('ul#clients-list').find('li:last').after($first);
                     });
@@ -199,18 +199,18 @@
         function initVideoPlayAndClose() {
             /***VIDEO PLAY BUTTON***/
             $('#html-video').addClass('hidden');
-            $('#play-btn').on('click', function() {
+            $('#play-btn').on('click', function () {
                 var htmlVideo = '#html-video';
                 var vCard = '#v-card';
                 var playButtonHolder = '#button-holder';
                 var playIcon = '#icon-play';
                 $(playButtonHolder).addClass('middle');
-                setTimeout(function() {
+                setTimeout(function () {
                     $(vCard).addClass('hide-overflow');
                     $('body').addClass('scale-effect');
                     $(vCard).addClass('height-change');
                 }, 600);
-                setTimeout(function() {
+                setTimeout(function () {
                     $(playIcon).hide();
                     $(htmlVideo).removeClass('hidden');
                     $(htmlVideo)[0].play();
@@ -220,13 +220,13 @@
             });
 
             /***VIDEO CLOSE BUTTON***/
-            $('#close-btn').on('click', function() {
+            $('#close-btn').on('click', function () {
                 var htmlVideo = '#html-video';
                 var vCard = '#v-card';
                 var playButtonHolder = '#button-holder';
                 var playIcon = '#icon-play';
                 $('body').removeClass('scale-effect');
-                setTimeout(function() {
+                setTimeout(function () {
                     $(playIcon).show();
                     $(playButtonHolder).removeClass('middle');
                     $(vCard).removeClass('hide-overflow');
@@ -240,9 +240,9 @@
 
         function initMapsNormal() {
             var mapOptions = {
-                zoom: 17,
-                center: new google.maps.LatLng(35.562393, -80.846733),
-                mapTypeId: google.maps.MapTypeId.ROADMAP,
+                zoom: 20,
+                center: new google.maps.LatLng(8.487425, 77.012697),
+                mapTypeId: google.maps.MapTypeId.SATELLITE,
                 scrollwheel: true,
                 disableDefaultUI: false
             };
@@ -319,7 +319,7 @@
             }];
             var mapOptions = {
                 zoom: 17,
-                center: new google.maps.LatLng(40.5715801, -74.33480170000001),
+                center: new google.maps.LatLng(8.487425, 77.0126971),
                 mapTypeId: google.maps.MapTypeId.ROADMAP,
                 scrollwheel: false,
                 disableDefaultUI: false,
@@ -344,18 +344,18 @@
 
         function initMail() {
             /***MAIL SCRIPT***/
-            $('form#contact-form').on('submit', function(e) {
+            $('form#contact-form').on('submit', function (e) {
                 e.preventDefault(); //Prevents default submit
                 var form = $(this);
                 $("#submit").attr('disabled', 'disabled'); //Disable the submit button on click
                 var post_data = form.serialize(); //Serialized the form data
                 $('div#form-loader').removeClass('is-hidden').fadeIn(500);
                 $.ajax({
-                        type: 'POST',
-                        url: 'php/mail_handler.php', // Form script
-                        data: post_data
-                    })
-                    .done(function() {
+                    type: 'POST',
+                    url: 'php/mail_handler.php', // Form script
+                    data: post_data
+                })
+                    .done(function () {
                         $('div#form-loader').fadeOut(500);
                         Materialize.toast('Message Sent! I will contact you shortly, Thanks', 4000);
                         $("form#contact-form")[0].reset();
@@ -363,7 +363,7 @@
                         $("#submit").removeAttr('disabled', 'disabled'); // Enable submit button
 
                     })
-                    .fail(function() {
+                    .fail(function () {
                         $('div#form-loader').fadeOut(500);
                         Materialize.toast('Sorry! Something Wrong, Try Again', 4000);
                         $("#submit").removeAttr('disabled', 'disabled'); // Enable submit button
@@ -388,7 +388,7 @@
     });
 
 
-    jQuery(window).on('load', function() {
+    jQuery(window).on('load', function () {
 
         /***FADES OUT PRE-LOADER***/
         $('div#loading').fadeOut(500);
