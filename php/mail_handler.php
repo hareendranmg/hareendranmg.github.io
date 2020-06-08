@@ -34,7 +34,7 @@ $message = "<html><body>$body</body></html>";
 if (empty($name) || empty($sub) || empty($email) || empty($comments)) {
 
     echo "Fill The Form Properly"; // message
-    header("Location: http://home-page-link"); //go to home page
+    header("Location: https://hareendran.nl"); //go to home page
     die();
 
 } else {
