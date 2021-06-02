@@ -259,7 +259,6 @@
                 labelAnchor: new google.maps.Point(10, 10),
                 labelClass: "map-label", // The CSS class for the label
                 draggable: false
-
             });
         }
 
